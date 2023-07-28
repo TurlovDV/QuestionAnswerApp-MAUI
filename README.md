@@ -2,7 +2,12 @@
 <br>
 <h1 align='Center'>QuestionAnswer</h1>
 
+
+<img height='150px' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/ResourceGit/QuestionAnswer.png?raw=true'>
+
+
 <small align='Center'>Разарботать клиент-серверное мобильное приложение, где пользователь может как задать вопрос, так и ответить в виде аркадной игры</small>
+
 
 </br>
 
