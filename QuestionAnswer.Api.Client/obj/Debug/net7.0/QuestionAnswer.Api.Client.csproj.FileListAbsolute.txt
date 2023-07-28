@@ -1,0 +1,15 @@
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\bin\Debug\net7.0\QuestionAnswer.Api.Client.deps.json
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\bin\Debug\net7.0\QuestionAnswer.Api.Client.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\bin\Debug\net7.0\QuestionAnswer.Api.Client.pdb
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\bin\Debug\net7.0\QuestionAnswer.DTO.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\bin\Debug\net7.0\QuestionAnswer.DTO.pdb
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.csproj.AssemblyReference.cache
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.AssemblyInfoInputs.cache
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.AssemblyInfo.cs
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.csproj.CoreCompileInputs.cache
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.csproj.CopyComplete
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\refint\QuestionAnswer.Api.Client.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\QuestionAnswer.Api.Client.pdb
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Api.Client\obj\Debug\net7.0\ref\QuestionAnswer.Api.Client.dll

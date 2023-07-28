@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MABtMil9Y6BsJt655IFq87NaqzS1MRWP5ZWFl6Hs8aI=",
+  "Source": "QuestionAnswer.Api",
+  "BasePath": "_content/QuestionAnswer.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

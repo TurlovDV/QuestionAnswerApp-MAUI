@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuestionAnswer</name>
+    </assembly>
+    <members>
+        <member name="T:QuestionAnswer.ViewModel.LoginPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.LoginPageViewModel.Login">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.LoginPageViewModel.login"/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.LoginPageViewModel.Password">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.LoginPageViewModel.password"/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.LoginPageViewModel.authenticationUserCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.LoginPageViewModel.AuthenticationUserCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.LoginPageViewModel.AuthenticationUserCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.LoginPageViewModel.AuthenticationUser"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.LoginPageViewModel.goToRegistrationPageCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.LoginPageViewModel.GoToRegistrationPageCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.LoginPageViewModel.GoToRegistrationPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.LoginPageViewModel.GoToRegistrationPage"/>.</summary>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.MainPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.PositionQuestion">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.MainPageViewModel.positionQuestion"/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.goToQuestionMessageCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.GoToQuestionMessageCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.GoToQuestionMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.GoToQuestionMessage(QuestionAnswer.Model.QuestionItemModel.QuestionItem)"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.goToProfileCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.GoToProfileCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.GoToProfileCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.GoToProfile"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.openPopupCreateQuestionCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupCreateQuestionCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupCreateQuestionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupCreateQuestion"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.openPopupMyQuestionCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupMyQuestionCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupMyQuestionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupMyQuestion"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.openPopupNotificationCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupNotificationCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupNotificationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupNotification"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.positionQuestionChangedCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.PositionQuestionChangedCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.PositionQuestionChangedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.PositionQuestionChanged"/>.</summary>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.MessagePageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MessagePageViewModel.QuestionItem">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.MessagePageViewModel.questionItem"/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MessagePageViewModel.goToMainPageCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MessagePageViewModel.GoToMainPageCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MessagePageViewModel.GoToMainPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MessagePageViewModel.GoToMainPage"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MessagePageViewModel.showAnswersCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MessagePageViewModel.ShowAnswersCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MessagePageViewModel.ShowAnswersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MessagePageViewModel.ShowAnswers"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.MessagePageViewModel.showCommentsCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MessagePageViewModel.ShowCommentsCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.MessagePageViewModel.ShowCommentsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MessagePageViewModel.ShowComments(System.Object)"/>.</summary>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.PopupsMainPage.PopupCreateQuestionViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.PopupsMainPage.PopupCreateQuestionViewModel.Title">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.PopupsMainPage.PopupCreateQuestionViewModel.title"/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.PopupsMainPage.PopupCreateQuestionViewModel.Description">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.PopupsMainPage.PopupCreateQuestionViewModel.description"/>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.PopupsMainPage.PopupMyQuestionViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.PopupsMainPage.PopupMyQuestionViewModel.closeThisPopupCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.PopupsMainPage.PopupMyQuestionViewModel.CloseThisPopupCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.PopupsMainPage.PopupMyQuestionViewModel.CloseThisPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.PopupsMainPage.PopupMyQuestionViewModel.CloseThisPopup"/>.</summary>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.PopupsMainPage.PopupNotificationQuestionViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.PopupsMainPage.PopupNotificationQuestionViewModel.closeThisPopupCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.PopupsMainPage.PopupNotificationQuestionViewModel.CloseThisPopupCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.PopupsMainPage.PopupNotificationQuestionViewModel.CloseThisPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.PopupsMainPage.PopupNotificationQuestionViewModel.CloseThisPopup"/>.</summary>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.ProfilePageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.ProfilePageViewModel.MyProfile">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.ProfilePageViewModel.myProfile"/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.ProfilePageViewModel.goToMainPageCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.ProfilePageViewModel.GoToMainPageCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.ProfilePageViewModel.GoToMainPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.ProfilePageViewModel.GoToMainPage"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.ProfilePageViewModel.goToBackCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.ProfilePageViewModel.GoToBackCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.ProfilePageViewModel.GoToBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.ProfilePageViewModel.GoToBack"/>.</summary>
+        </member>
+        <member name="T:QuestionAnswer.ViewModel.RegistrationPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.Login">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.login"/>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.Password">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.password"/>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.registrationUserCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.RegistrationUserCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.RegistrationUserCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.RegistrationPageViewModel.RegistrationUser"/>.</summary>
+        </member>
+        <member name="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.goToLoginPageCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.GoToLoginPageCommand"/>.</summary>
+        </member>
+        <member name="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.GoToLoginPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.RegistrationPageViewModel.GoToLoginPage"/>.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Login">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Login" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PositionQuestion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PositionQuestion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.QuestionItem">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "QuestionItem" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MyProfile">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MyProfile" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Login">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Login" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PositionQuestion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PositionQuestion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.QuestionItem">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "QuestionItem" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MyProfile">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MyProfile" generated properties.</summary>
+        </member>
+    </members>
+</doc>

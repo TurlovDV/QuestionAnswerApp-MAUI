@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuestionAnswer.View.ProfilePageView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"    
+             xmlns:viewmodel="clr-namespace:QuestionAnswer.ViewModel"             
+             xmlns:model="clr-namespace:QuestionAnswer.Mobile.Model.QuestionItemModel"
+             x:DataType="viewmodel:ProfilePageViewModel"            
+             Title="ProfilePageView">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#5D377A" Offset="0"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Shell.NavBarIsVisible>
+        <x:Boolean>false</x:Boolean>
+    </Shell.NavBarIsVisible>
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#5D377A"></toolkit:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="Auto, *, Auto, Auto">
+        <Grid>
+            <Border Grid.Row="0" BackgroundColor="Black" Stroke="Black">
+                <Image Source="profile.svg" HorizontalOptions="FillAndExpand" WidthRequest="200" Scale="3" Aspect="Fill"></Image>
+            </Border>
+            <Border Grid.Row="0" BackgroundColor="Black" Stroke="Black" Opacity="0.5"></Border>
+        </Grid>
+
+        <StackLayout Spacing="10" VerticalOptions="End" HorizontalOptions="Center" TranslationY="80">
+            <Border Grid.Row="0" StrokeShape="Ellipse" WidthRequest="100" Padding="0" HeightRequest="100" HorizontalOptions="Center" Stroke="White" Opacity="0.9">
+                <Image Source="profile.svg" WidthRequest="100" HeightRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"></Image>
+            </Border>
+            <Label FontFamily="Roboto-Medium" Text="{Binding MyProfile.Name}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        </StackLayout>
+
+        <StackLayout Spacing="15" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout>
+                <Label FontFamily="Roboto-Medium" Text="{Binding MyProfile.Rating}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label FontFamily="Roboto-Medium" Text="РЕЙТНГ" TextColor="#6B6B6B" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label FontFamily="Roboto-Medium" Text="{Binding MyProfile.CountMyQuestions}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label FontFamily="Roboto-Medium" Text="МОИ ВОПРОСЫ" TextColor="#6B6B6B" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label FontFamily="Roboto-Medium" Text="{Binding MyProfile.AnswersToQuestions}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label FontFamily="Roboto-Medium" Text="МОИ ОТВЕТЫ" TextColor="#6B6B6B" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+        </StackLayout>
+        
+        <Image Source="vector.svg" Aspect="Fill" Grid.Row="2" HorizontalOptions="FillAndExpand"></Image>
+        <StackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Start" TranslationY="-60" Spacing="10">
+            <Label FontFamily="Roboto-Medium" Text="Выйти" TextColor="White" FontAttributes="Bold" FontSize="18"></Label>
+            <Frame Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#7A3A98" HeightRequest="80" WidthRequest="80" CornerRadius="100">
+                <Image Source="message_image.svg" HorizontalOptions="Center" VerticalOptions="Center" Margin="3"></Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ExitCommand}"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+
+        <Frame Grid.Row="3" BackgroundColor="#582769" BorderColor="#582769" CornerRadius="0"></Frame>
+
+        <ImageButton Command="{Binding GoToMainPageCommand}" Source="back_image.svg" HorizontalOptions="Start" VerticalOptions="Start" Margin="15, 10, 10, 10" WidthRequest="45" HeightRequest="45"></ImageButton>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuestionAnswer.View.MessagePageView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             xmlns:model="clr-namespace:QuestionAnswer.Mobile.Model.QuestionItemModel"
+             xmlns:viewmodel="clr-namespace:QuestionAnswer.ViewModel"
+             xmlns:converter="clr-namespace:QuestionAnswer.Converter"
+             x:DataType="viewmodel:MessagePageViewModel">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#5D377A" Offset="0"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Shell.NavBarIsVisible>
+        <x:Boolean>false</x:Boolean>
+    </Shell.NavBarIsVisible>
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#5D377A"></toolkit:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:IsMyMessageToColorConverter x:Key="isMyMessageToColorConverter"></converter:IsMyMessageToColorConverter>
+            <converter:IsCountCommentsToBoolConverter x:Key="isCountCommentsToBoolConverter"></converter:IsCountCommentsToBoolConverter>
+            <converter:IsLikeToPathImageConverter x:Key="isLikeToPathImageConverter"></converter:IsLikeToPathImageConverter>
+            <converter:IsDizLikeToPathImageConverter x:Key="isDizLikeToPathImageConverter"></converter:IsDizLikeToPathImageConverter>
+            <converter:IsNullToBoolConverter x:Key="isNullToBoolConverter"></converter:IsNullToBoolConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="*, Auto">
+        <!--<ScrollView VerticalScrollBarVisibility="Never">-->
+        <!--<StackLayout Margin="20, 50, 20, 80" Spacing="5">-->
+        <CollectionView Margin="20, 0, 20, 0" Grid.Row="0" VerticalOptions="FillAndExpand"
+                            ItemsSource="{Binding QuestionItem.Answers}" 
+                            RemainingItemsThreshold="0"
+                            RemainingItemsThresholdReachedCommand="{Binding Path=BindingContext.ShowAnswersCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}">
+                <CollectionView.Header>
+                    <StackLayout Margin="0, 50, 0, 0">
+                        <!--Вопрос-->
+                        <Label FontFamily="Roboto-Medium" Text="Случайный вопрос" Margin="10" HorizontalOptions="Start" TextColor="White" FontSize="21" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                        <Border Stroke="Transparent" Padding="10" StrokeShape="RoundRectangle 10, 10, 10, 10"  BackgroundColor="#581F6C">
+                            <StackLayout Spacing="5">
+                                <StackLayout Margin="0, 0, 10, 0" Orientation="Horizontal" Spacing="15">
+                                    <StackLayout Orientation="Horizontal" Spacing="3">
+                                        <Image Source="profile.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                        <Label FontFamily="Roboto-Medium" Text="{Binding QuestionItem.Title}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="3">
+                                        <Image Source="star_image.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                        <Label FontFamily="Roboto-Medium" Text="{Binding QuestionItem.Rating}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="3">
+                                        <Image Source="view_image.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                        <Label FontFamily="Roboto-Medium" Text="{Binding QuestionItem.Views}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                                <Label FontFamily="Roboto-Medium" Text="{Binding QuestionItem.Description}" Margin="10" TextColor="White"></Label>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="10" Margin="0, 0, 20, 0">
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Image Source="{Binding QuestionItem.IsLike, Converter={StaticResource isLikeToPathImageConverter}}" WidthRequest="23" HeightRequest="23" VerticalOptions="Start">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding LikeCommand}" CommandParameter="{Binding QuestionItem}"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label FontFamily="Roboto-Medium" Text="{Binding QuestionItem.CountLike}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Image Source="{Binding QuestionItem.IsDizLike, Converter={StaticResource isDizLikeToPathImageConverter}}" WidthRequest="23" TranslationY="1" HeightRequest="23" VerticalOptions="End">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding DizLikeCommand}" CommandParameter="{Binding QuestionItem}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label FontFamily="Roboto-Medium" Text="{Binding QuestionItem.CountDizLike}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Border>
+
+                        <!--Ответы-->
+                        <Label Margin="10, 15, 0, 5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Ответов " FontFamily="Roboto-Medium" FontSize="19" />
+                                    <Span Text="{Binding QuestionItem.CountAnswers}" TextColor="Yellow" FontFamily="Roboto-Medium" FontSize="19" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </CollectionView.Header>
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:AnswerItem">
+                            <Grid>
+                                <StackLayout Spacing="5">
+                                    <!--Ответ-->
+                                    <Border Stroke="Transparent" BackgroundColor="{Binding IsMy, Converter={StaticResource isMyMessageToColorConverter}}" Padding="7" StrokeShape="RoundRectangle 10">
+                                        <StackLayout Spacing="5">
+                                            <StackLayout Margin="0, 0, 10, 0" Orientation="Horizontal" Spacing="15">
+                                                <StackLayout Orientation="Horizontal" Spacing="3">
+                                                    <Image Source="profile.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                                    <Label FontFamily="Roboto-Medium" Text="{Binding UserName}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Spacing="3">
+                                                    <Image Source="star_image.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                                    <Label FontFamily="Roboto-Medium" Text="{Binding Rating}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                </StackLayout>
+                                            </StackLayout>
+
+                                            <Label FontFamily="Roboto-Medium" Text="{Binding Description}" Margin="10" TextColor="White"></Label>
+
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="30" Margin="0, 0, 20, 0">
+                                                <Label FontFamily="Roboto-Medium" Text="Ответить..." HorizontalOptions="Start" TextColor="#ADBFFF" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center">
+                                                    <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.SendReplyToMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="10" Margin="0, 0, 20, 0">
+                                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                                <Image Source="{Binding IsLike, Converter={StaticResource isLikeToPathImageConverter}}" WidthRequest="23" HeightRequest="23" VerticalOptions="Start">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.LikeCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                                        <Label FontFamily="Roboto-Medium" Text="{Binding CountLike}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                                <Image Source="{Binding IsDizLike, Converter={StaticResource isDizLikeToPathImageConverter}}" WidthRequest="23" TranslationY="1" HeightRequest="23" VerticalOptions="End">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.DizLikeCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                                        <Label FontFamily="Roboto-Medium" Text="{Binding CountDizLike}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Border>
+
+                                    <!--Комменты ответа-->
+                                    <StackLayout BindableLayout.ItemsSource="{Binding Comments}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate x:DataType="model:MessageItem">
+                                                <StackLayout Margin="50, 0, 0, 0" Orientation="Horizontal" Spacing="5">
+                                                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="3" BackgroundColor="White"></BoxView>
+
+                                                    <Border Stroke="Transparent" BackgroundColor="{Binding IsMy, Converter={StaticResource isMyMessageToColorConverter}}" Padding="7" HorizontalOptions="FillAndExpand" StrokeShape="RoundRectangle 10">
+                                                        <StackLayout Spacing="5">
+                                                            <StackLayout Margin="0, 0, 10, 0" Orientation="Horizontal" Spacing="15">
+                                                                <StackLayout Orientation="Horizontal" Spacing="3">
+                                                                    <Image Source="profile.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                                                    <Label FontFamily="Roboto-Medium" Text="{Binding UserName}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                                </StackLayout>
+                                                                <StackLayout Orientation="Horizontal" Spacing="3">
+                                                                    <Image Source="star_image.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                                                    <Label FontFamily="Roboto-Medium" Text="{Binding Rating}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                                </StackLayout>
+                                                            </StackLayout>
+
+                                                            <Label FontFamily="Roboto-Medium" Text="{Binding Description}" Margin="10" TextColor="White"></Label>
+
+                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="30" Margin="0, 0, 20, 0">
+                                                                <Label FontFamily="Roboto-Medium" Text="Ответить..." HorizontalOptions="Start" TextColor="#ADBFFF" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center">
+                                                                    <Label.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.SendReplyToMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                                    </Label.GestureRecognizers>
+                                                                </Label>
+
+                                                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="10" Margin="0, 0, 20, 0">
+                                                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                                                <Image Source="{Binding IsLike, Converter={StaticResource isLikeToPathImageConverter}}" WidthRequest="23" HeightRequest="23" VerticalOptions="Start">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.LikeCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                                        <Label FontFamily="Roboto-Medium" Text="{Binding CountLike}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                                    </StackLayout>
+                                                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                                                        <Image Source="{Binding IsDizLike, Converter={StaticResource isDizLikeToPathImageConverter}}" WidthRequest="23" TranslationY="1" HeightRequest="23" VerticalOptions="End">
+                                                                            <Image.GestureRecognizers>
+                                                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.DizLikeCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                                            </Image.GestureRecognizers>
+                                                                        </Image>
+                                                                        <Label FontFamily="Roboto-Medium" Text="{Binding CountDizLike}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                                                    </StackLayout>
+                                                                </StackLayout>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                    </Border>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" IsVisible="{Binding IsVisibleShowMore}" HorizontalOptions="Center" Spacing="10">
+                                        <Image Source="arrow_image.svg" HeightRequest="20" WidthRequest="20" VerticalOptions="Center"></Image>
+                                        <Label Text="Показать все ответы" FontFamily="Roboto-Medium" VerticalOptions="Center" FontSize="Small" TextColor="White"></Label>
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.ShowCommentsCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}"></TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <Label Text="Ответов еще нет" FontFamily="Roboto-Medium" HorizontalOptions="Center" FontSize="Small" TextColor="Gray"></Label>
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            <!--</StackLayout>-->
+        <!--</ScrollView>-->
+
+        <ImageButton Grid.RowSpan="2" Source="back_image.svg" Command="{Binding GoToMainPageCommand}" HorizontalOptions="Start" VerticalOptions="Start" Margin="15, 10, 10, 10" WidthRequest="45" HeightRequest="45"></ImageButton>
+
+        <Grid Grid.Row="1">
+            <StackLayout Spacing="0">
+                <Border BackgroundColor="#313131" HorizontalOptions="Start" Padding="15, 5, 15, 5" Stroke="Transparent" TranslationY="1" IsVisible="{Binding ReplyToMessage, Converter={StaticResource isNullToBoolConverter}}" StrokeShape="RoundRectangle 10, 10, 0, 0">
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="{Binding ReplyToMessage.UserName}" FontFamily="Roboto-Medium" HorizontalOptions="Center" FontSize="Small" VerticalOptions="Center"></Label>
+                        <Image Source="close_image.svg" WidthRequest="20" VerticalOptions="Center" HeightRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CancelReplyToMessageCommand}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </Border>
+                <Frame BackgroundColor="#292929" BorderColor="#292929" CornerRadius="0" VerticalOptions="End" HorizontalOptions="FillAndExpand" Padding="5" HeightRequest="55">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="8">
+                        <ImageButton Margin="10, 0, 0, 0" WidthRequest="25" HeightRequest="25" Source="attach_image.svg" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+                        <Entry Margin="0, 0, 10, 0" Placeholder="Ответить" Text="{Binding EntryAnswerText}" ReturnCommand="{Binding SendAnswerCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" PlaceholderColor="#D9D9D9" TextColor="White" FontFamily="Roboto-Medium"></Entry>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuestionAnswer.View.PopupsMainPage.PopupCreateQuestionView"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:viewmodel="clr-namespace:QuestionAnswer.ViewModel.PopupsMainPage"
+             x:DataType="viewmodel:PopupCreateQuestionViewModel"
+             BackgroundColor="Transparent"
+             Title="">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            EasingIn="CubicInOut"
+            DurationIn="400"
+            PositionIn="Bottom"
+            PositionOut="Bottom" />
+    </mopups:PopupPage.Animation>
+
+    <Border VerticalOptions="End" Stroke="#4B0551" StrokeShape="RoundRectangle 25, 25, 0, 0">
+        <Grid RowDefinitions="*, Auto, Auto">
+            <StackLayout Spacing="20" Margin="25, 30, 25, 80">
+                <StackLayout Spacing="10">
+                    <Label FontFamily="Roboto-Medium" Text="Тема вопроса" TextColor="White" FontSize="19"></Label>
+                    <Frame BorderColor="Gray" BackgroundColor="#311A39" CornerRadius="5" Padding="3">
+                        <Entry Placeholder="Тема..." Text="{Binding Title}" FontFamily="Roboto-Medium" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10, 0, 10, 0"></Entry>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Spacing="10">
+                    <Label FontFamily="Roboto-Medium" Text="Описание вопроса" TextColor="White" FontSize="19"></Label>
+                    <Frame BorderColor="Gray" BackgroundColor="#311A39" CornerRadius="5" Padding="5">
+                        <Editor HeightRequest="100" Text="{Binding Description}" FontFamily="Roboto-Medium" Placeholder="Описание" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10, 0, 10, 0"></Editor>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" Spacing="10" TranslationY="-50">
+                <Label FontFamily="Roboto-Medium" Text="Задать вопрос" TextColor="White" FontAttributes="Bold" FontSize="18"></Label>
+                <Frame Grid.Row="3" BorderColor="Transparent" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#7A3A98" HeightRequest="80" WidthRequest="80" CornerRadius="100">
+                    <Image Source="message_image.svg" HorizontalOptions="Center" VerticalOptions="Center" Margin="3"></Image>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SendNewQuestionCommand}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+            <Image Source="vector_small_image.svg" Aspect="Fill" Grid.Row="1" Grid.RowSpan="2" HorizontalOptions="FillAndExpand"></Image>
+
+            <ImageButton Source="close_image.svg" Clicked="Close" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="28" Margin="15" HeightRequest="28"></ImageButton>
+        </Grid>
+        
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#4B0551" Offset="0"/>
+                <GradientStop Color="#4E2752" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+    </Border>
+    
+</mopups:PopupPage>

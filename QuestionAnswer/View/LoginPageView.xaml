@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuestionAnswer.View.LoginPageView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
+             xmlns:viewmodel="clr-namespace:QuestionAnswer.ViewModel"
+             x:DataType="viewmodel:LoginPageViewModel"
+             Title="">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#5D377A" Offset="0"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Shell.NavBarIsVisible>
+        <x:Boolean>false</x:Boolean>
+    </Shell.NavBarIsVisible>
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#5D377A"></toolkit:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="*, Auto">
+        <Image Grid.RowSpan="2" Source="background_image.svg" VerticalOptions="Start" HorizontalOptions="End"></Image>
+
+        <StackLayout Grid.RowSpan="2" HorizontalOptions="FillAndExpand" Spacing="30" Padding="50, 0, 50, 0" VerticalOptions="Center">
+            <Label FontFamily="Roboto-Medium" Text="Вход" HorizontalOptions="Center" TextColor="White" FontSize="Large" VerticalOptions="Center" FontAttributes="Bold"></Label>
+
+            <StackLayout Spacing="13">
+                <Entry Placeholder="Email" Text="{Binding Login}" HorizontalOptions="FillAndExpand"></Entry>
+                <StackLayout Spacing="3">
+                    <Entry Placeholder="Пароль" Text="{Binding Password}" HorizontalOptions="FillAndExpand" IsPassword="True"></Entry>
+                    <Label FontFamily="Roboto-Medium" Margin="10, 0, 0, 0" Text="создать аккаунт" TextColor="#B852DC" FontSize="Small">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToRegistrationPageCommand}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <Image Source="vector.svg" Aspect="Fill" Grid.Row="1" HorizontalOptions="FillAndExpand"></Image>
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" TranslationY="-60" Spacing="10">
+            <Label FontFamily="Roboto-Medium" Text="Войти" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="18"></Label>
+            <Frame HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#7A3A98" HeightRequest="80" WidthRequest="80" CornerRadius="100">
+                <Image Source="profile_image.svg" HorizontalOptions="Center" VerticalOptions="Center" Margin="3"></Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AuthenticationUserCommand}"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

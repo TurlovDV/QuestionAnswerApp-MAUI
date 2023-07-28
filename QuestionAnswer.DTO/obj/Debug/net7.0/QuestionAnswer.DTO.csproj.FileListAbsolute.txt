@@ -1,0 +1,12 @@
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\bin\Debug\net7.0\QuestionAnswer.DTO.deps.json
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\bin\Debug\net7.0\QuestionAnswer.DTO.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\bin\Debug\net7.0\QuestionAnswer.DTO.pdb
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.csproj.AssemblyReference.cache
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.AssemblyInfoInputs.cache
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.AssemblyInfo.cs
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.csproj.CoreCompileInputs.cache
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\refint\QuestionAnswer.DTO.dll
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\QuestionAnswer.DTO.pdb
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.DTO\obj\Debug\net7.0\ref\QuestionAnswer.DTO.dll
