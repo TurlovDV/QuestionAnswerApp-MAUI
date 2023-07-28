@@ -2,7 +2,7 @@
 <br>
 <h1 align='Center'>QuestionAnswer</h1>
 
- <img height='16px' src='C:\QuestionAnswerProject\QuestionAnswer\ResourceGit.QuestionAnswer.png'>
+ <img height='16px' src='[C:\QuestionAnswerProject\QuestionAnswer\ResourceGit.QuestionAnswer.png](https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/ResourceGit/QuestionAnswer.png)'>
 
 
 <small align='Center'>Разарботать клиент-серверное мобильное приложение, где пользователь может как задать вопрос, так и ответить в виде аркадной игры</small>
