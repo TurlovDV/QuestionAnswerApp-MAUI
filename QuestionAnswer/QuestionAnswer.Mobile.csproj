@@ -52,7 +52,6 @@
 	  <None Remove="Resources\Images\arrow_image.svg" />
 	  <None Remove="Resources\Images\attach_image.svg" />
 	  <None Remove="Resources\Images\back_image.svg" />
-	  <None Remove="Resources\Images\clock_image.svg" />
 	  <None Remove="Resources\Images\close_image.svg" />
 	  <None Remove="Resources\Images\dizlike_image.svg" />
 	  <None Remove="Resources\Images\dizlike_true_image.svg" />

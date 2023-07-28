@@ -64,5 +64,20 @@ namespace QuestionAnswer.Api.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost]
+        [Route("views")]
+        public async Task<ActionResult> AddViews(Guid questionId, int count)
+        {
+            try
+            {
+                await dataBaseService.AddViewQuestion(questionId, count);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

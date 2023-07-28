@@ -252,5 +252,22 @@ namespace QuestionAnswer.Api.Client
                 await httpClientAuth.SendAsync(request);
             }
         }
+
+        public async Task AddViewQuestion(Guid questionId)
+        {
+            var request = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new Uri(ApiConfiguration.BASE_ADRESS + $"questions/views?questionId={questionId}&count=1")
+            };
+
+            var response = await httpClientAuth.SendAsync(request);
+
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                await RefreshAccessToken();
+                await httpClientAuth.SendAsync(request);
+            }
+        }
     }
 }

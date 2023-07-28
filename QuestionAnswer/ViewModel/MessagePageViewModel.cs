@@ -77,7 +77,7 @@ namespace QuestionAnswer.ViewModel
         {
             if (ReplyToMessage is AnswerItem)
             {
-                await SendMessageToAnswer(ReplyToMessage.Id);
+                await SendMessageToAnswer(ReplyToMessage as AnswerItem);
 
                 (ReplyToMessage as AnswerItem).CountComments++;
             }
@@ -86,13 +86,15 @@ namespace QuestionAnswer.ViewModel
                 var answerItem = QuestionItem.Answers                
                     .FirstOrDefault(x => x.Comments.FirstOrDefault(m => m == ReplyToMessage) != null);
 
-                await SendMessageToAnswer(answerItem.Id);
+                await SendMessageToAnswer(answerItem);
 
                 answerItem.CountComments++;
             }
             else
             {
-                await SendMessageToQuestions();
+                var user = await dataCentreService.GetUser(storageOptionsService.GetUserId());
+
+                await SendMessageToQuestions(user);
 
                 QuestionItem.CountAnswers++;
             }
@@ -104,32 +106,37 @@ namespace QuestionAnswer.ViewModel
         }
 
 
-        private async Task SendMessageToAnswer(Guid messageItemId)
+        private async Task SendMessageToAnswer(AnswerItem answerItem)
         {
             Guid idNewMessageItem = Guid.NewGuid();
+
+            var user = await dataCentreService.GetUser(storageOptionsService.GetUserId());
 
             await dataCentreService.SendNewCommentToAnswer(new DTO.Model.CreateCommentToAnswer()
             {
                 Id = idNewMessageItem,
                 Description = EntryAnswerText,
-                AnswerId = messageItemId,
+                AnswerId = answerItem.Id,
                 UserId = storageOptionsService.GetUserId()
             });
 
-            var user = await dataCentreService.GetUser(storageOptionsService.GetUserId());
+            //var asnwer = QuestionItem.Answers.FirstOrDefault(x => x.Id == messageItemId);
 
-            QuestionItem.Answers.FirstOrDefault(x => x.Id == messageItemId).Comments
-                .Add(new MessageItem()
-                {
-                    Id = idNewMessageItem,
-                    Description = EntryAnswerText,
-                    IsMy = true,
-                    UserId = user.Id,
-                    UserName = user.Name                    
-                });
+            //if (answerItem.Comments is null)
+            //    answerItem.Comments = new();
+
+            answerItem.Comments.Add(new MessageItem()
+            {
+                Id = idNewMessageItem,
+                Description = EntryAnswerText,
+                IsMy = true,
+                UserId = user.Id,
+                UserName = user.Name,
+                Rating = user.Rating
+            });
         }
 
-        private async Task SendMessageToQuestions()
+        private async Task SendMessageToQuestions(User user)
         {
             Guid idNewMessageItem = Guid.NewGuid();
             await dataCentreService.SendNewAnswerToQuestion(new DTO.Model.CreateAnswerToQuestion()
@@ -139,8 +146,6 @@ namespace QuestionAnswer.ViewModel
                 QuestionId = QuestionItem.Id,
                 UserId = storageOptionsService.GetUserId()
             });
-
-            var user = await dataCentreService.GetUser(storageOptionsService.GetUserId());
             
             QuestionItem.Answers.Add(new AnswerItem()
             {
@@ -148,8 +153,12 @@ namespace QuestionAnswer.ViewModel
                 UserName = user.Name,
                 IsMy = true,
                 UserId = user.Id,
-                Id = idNewMessageItem
-            });
+                Id = idNewMessageItem,
+                Rating = user.Rating,
+                CountComments = 0,
+                IsVisibleShowMore = false,
+                Comments = new System.Collections.ObjectModel.ObservableCollection<MessageItem>()
+            });            
         }
 
         public async Task LoadingAnswers(int countStart)

@@ -10,6 +10,8 @@ namespace QuestionAnswer.DTO.Services
 {
     public interface IDataBaseService
     {
+        public Task AddViewQuestion(Guid questionId, int count);
+
         public Task<IList<MessageItemDTO>> GetCommentsOfAnswer(Guid userId, Guid idAnswer, int count, int countStart);
 
         public Task SendNewCommentToAnswer(CreateCommentToAnswer createComment);

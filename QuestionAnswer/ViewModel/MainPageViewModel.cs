@@ -76,18 +76,20 @@ namespace QuestionAnswer.ViewModel
         }
 
         [RelayCommand]
-        public async void OpenPopupNotification()
+        public async void OpenPopupRatingInfo()
         {
-            await MopupService.Instance.PushAsync(new PopupNotificationView());
+            await MopupService.Instance.PushAsync(new PopupMessageView("Рейтинг", "Отвечай на вопросы и повышай свой рейтинг"));
         }
 
         [RelayCommand]
         public async void PositionQuestionChanged()
-        {
+        {            
             if (PositionQuestion >= Questions.Count - 1)
             {
                 await LoadingQuestions(Questions.Count);
             }
+
+            await dataCentreService.AddViewQuestion(Questions[PositionQuestion].Id);
         }
 
         public async Task LoadingQuestions(int countStart)

@@ -27,6 +27,9 @@ namespace QuestionAnswer.ViewModel
         [ObservableProperty]
         private string password;
 
+        [ObservableProperty]
+        private string replayPassword;
+
         public RegistrationPageViewModel()
         {
             storageOptionsService = ServiceProvider.GetService<IStorageOptionsService>();
@@ -36,6 +39,12 @@ namespace QuestionAnswer.ViewModel
         [RelayCommand]
         public async void RegistrationUser()
         {
+            if(!ReplayPassword.Equals(Password))
+            {
+                await MopupService.Instance.PushAsync(new PopupMessageView("Ошибка", "Введенные пароли не совпадают"));
+                return;
+            }
+
             var authResponse = await initializationUserService.RegistrationUser(new DTO.Model.CreateNewUser()
             {
                 AuthUserItem = new DTO.Model.AuthUserItem()

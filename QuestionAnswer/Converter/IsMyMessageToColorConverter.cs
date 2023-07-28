@@ -12,7 +12,7 @@ namespace QuestionAnswer.Converter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)value)
-                return Colors.Gray;
+                return Color.Parse("#454545");
 
             return Color.Parse("#4A2656");
         }

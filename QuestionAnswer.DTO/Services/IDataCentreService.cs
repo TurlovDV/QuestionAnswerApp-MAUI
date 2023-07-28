@@ -12,6 +12,7 @@ namespace QuestionAnswer.DTO.Services
     {
         //public Guid UserId { get; set; }
 
+        public Task AddViewQuestion(Guid questionId);
         public Task<IList<MessageItemDTO>> GetCommentsOfAnswer(Guid userId, Guid idAnswer, int countStart);
 
         public Task SendNewCommentToAnswer(CreateCommentToAnswer createComment);

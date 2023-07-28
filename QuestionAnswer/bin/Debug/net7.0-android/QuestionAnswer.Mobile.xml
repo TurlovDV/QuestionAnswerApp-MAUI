@@ -87,11 +87,11 @@
         <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupMyQuestionCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupMyQuestion"/>.</summary>
         </member>
-        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.openPopupNotificationCommand">
-            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupNotificationCommand"/>.</summary>
+        <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.openPopupRatingInfoCommand">
+            <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupRatingInfoCommand"/>.</summary>
         </member>
-        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupNotificationCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupNotification"/>.</summary>
+        <member name="P:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupRatingInfoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuestionAnswer.ViewModel.MainPageViewModel.OpenPopupRatingInfo"/>.</summary>
         </member>
         <member name="F:QuestionAnswer.ViewModel.MainPageViewModel.positionQuestionChangedCommand">
             <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.MainPageViewModel.PositionQuestionChangedCommand"/>.</summary>
@@ -280,6 +280,9 @@
         <member name="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.Password">
             <inheritdoc cref="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.password"/>
         </member>
+        <member name="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.ReplayPassword">
+            <inheritdoc cref="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.replayPassword"/>
+        </member>
         <member name="F:QuestionAnswer.ViewModel.RegistrationPageViewModel.registrationUserCommand">
             <summary>The backing field for <see cref="P:QuestionAnswer.ViewModel.RegistrationPageViewModel.RegistrationUserCommand"/>.</summary>
         </member>
@@ -445,6 +448,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MyProfile">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MyProfile" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ReplayPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ReplayPassword" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -498,6 +504,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MyProfile">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MyProfile" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ReplayPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ReplayPassword" generated properties.</summary>
         </member>
     </members>
 </doc>

@@ -18,10 +18,10 @@
             PositionOut="Center" />
     </mopups:PopupPage.Animation>
 
-    <Frame BackgroundColor="#45005C" CornerRadius="15" BorderColor="Transparent" Padding="30, 20, 30, 20" HorizontalOptions="Center" VerticalOptions="Center">
+    <Frame BackgroundColor="#45005C" MaximumWidthRequest="300" CornerRadius="15" BorderColor="Transparent" Padding="30, 20, 30, 20" HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="7">
             <Label FontFamily="Roboto-Medium" Text="{Binding Title}" HorizontalOptions="Center" TextColor="#CCCCCC" FontSize="18"></Label>
-            <Label FontFamily="Roboto-Medium" Text="{Binding Description}" HorizontalOptions="Center" TextColor="#FFFFFF" FontSize="14"></Label>
+            <Label FontFamily="Roboto-Medium" Text="{Binding Description}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="#FFFFFF" FontSize="14"></Label>
         </StackLayout>
         <Frame.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding PopupCloseCommand}"></TapGestureRecognizer>

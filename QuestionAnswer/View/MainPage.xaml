@@ -29,7 +29,6 @@
                 <TapGestureRecognizer Command="{Binding GoToProfileCommand}"></TapGestureRecognizer>
             </StackLayout.GestureRecognizers>
         </StackLayout>
-        <ImageButton Command="{Binding OpenPopupNotificationCommand}" Source="clock_image.svg" Grid.Row="0" HorizontalOptions="End" Margin="0, 13, 10, 0" WidthRequest="35"></ImageButton>
 
         <StackLayout Spacing="15" TranslationY="-40" Grid.Row="1" VerticalOptions="Center">
             <StackLayout VerticalOptions="Center" Spacing="20">
@@ -88,6 +87,7 @@
                             <Label FontFamily="Roboto-Medium" Text="Рейтинг" TextColor="Black" FontSize="16" FontAttributes="Bold"></Label>
                             <Label FontFamily="Roboto-Medium" Text="{Binding Profile.Rating}" TextColor="#716E26" FontSize="13" FontAttributes="Bold"></Label>
                         </StackLayout>
+                        <Button Command="{Binding OpenPopupRatingInfoCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
                 </Frame>
                 <Frame CornerRadius="20" Grid.Column="1" Padding="0" HorizontalOptions="End" WidthRequest="150" HeightRequest="140">

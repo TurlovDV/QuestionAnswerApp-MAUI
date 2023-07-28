@@ -20,7 +20,7 @@ namespace QuestionAswer.ADO
             {
                 await sqlConnection.OpenAsync();
 
-                string commandString = $"INSERT INTO Users VALUES (@id, @name, default, @password, @email);";
+                string commandString = $"INSERT INTO Users VALUES (@id, @name, @password, @email);";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 sqlCommand.Parameters.Add(new SqlParameter("@id", createNewUser.Id.ToString()));
@@ -39,7 +39,7 @@ namespace QuestionAswer.ADO
             {
                 await sqlConnection.OpenAsync();
                 
-                string commandString = $"EXEC GetAnswersToQuestion '{userId}', '{idQuestion}', {count}, {countStart};";
+                string commandString = $"EXEC GetAnswersToQuestion '{userId}', '{idQuestion}', {count}, {countStart}, 15;";
                 
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
@@ -90,7 +90,7 @@ namespace QuestionAswer.ADO
                 await sqlConnection.OpenAsync();
 
                 //string commandString = $"SELECT *, (SELECT [Name] FROM Users WHERE Comments.UserId = Users.Id) AS UserName FROM Comments WHERE Comments.AnswerId = '{idAnswer.ToString()}' ORDER BY Comments.Rating OFFSET {countStart} ROWS FETCH NEXT {count} ROWS ONLY";
-                var commandString = $"EXEC GetCommentsOfAnswer '{userId}', '{idAnswer}', {count}, {countStart};";
+                var commandString = $"EXEC GetCommentsOfAnswer '{userId}', '{idAnswer}', {count}, {countStart}, 15;";
 
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
@@ -173,10 +173,7 @@ namespace QuestionAswer.ADO
             {
                 await sqlConnection.OpenAsync();
 
-                string commandString = "SELECT *, " +
-                    "(SELECT COUNT(*) FROM Questions WHERE (SELECT COUNT(*) FROM Answers WHERE Answers.UserId = @userId AND Answers.QuestionId = Questions.Id) >= 1) AS [CountAnswers], " +
-                    "(SELECT COUNT(*) FROM Questions WHERE Questions.UserId = @userId) AS [CountMyQuestions] " +
-                    "FROM Users WHERE Users.Id = @userId";
+                string commandString = $"EXEC GetUser '{id}', 15";
 
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
                 sqlCommand.Parameters.Add(new SqlParameter("@userId", id.ToString()));
@@ -220,7 +217,7 @@ namespace QuestionAswer.ADO
                 //    $"(SELECT COUNT(*) FROM Answers WHERE Questions.Id = Answers.QuestionId) AS CountAnswers " +
                 //    $"FROM Questions ORDER BY Rating OFFSET {startCount} ROWS FETCH NEXT {count} ROWS ONLY";
 
-                string commandString = $"EXEC GetRandomQuestions @userId, {count}, {startCount};";
+                string commandString = $"EXEC GetRandomQuestions @userId, {count}, {startCount}, 15;";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 sqlCommand.Parameters.Add(new SqlParameter("@userId", userId.ToString()));
@@ -270,7 +267,7 @@ namespace QuestionAswer.ADO
             {
                 await sqlConnection.OpenAsync();
 
-                string commandString = $"INSERT INTO Answers VALUES (@Id, @QuestionId, @UserId, @Description, 0);";
+                string commandString = $"INSERT INTO Answers VALUES (@Id, @QuestionId, @UserId, @Description);";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 sqlCommand.Parameters.Add(new SqlParameter("@id", createAnswer.Id.ToString()));
@@ -292,7 +289,7 @@ namespace QuestionAswer.ADO
             {
                 await sqlConnection.OpenAsync();
 
-                string commandString = $"INSERT INTO Comments VALUES (@Id, @AnswerId, @UserId, @Description, 0);";
+                string commandString = $"INSERT INTO Comments VALUES (@Id, @AnswerId, @UserId, @Description);";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 sqlCommand.Parameters.Add(new SqlParameter("@id", createComment.Id.ToString()));
@@ -313,7 +310,7 @@ namespace QuestionAswer.ADO
             {
                 await sqlConnection.OpenAsync();
 
-                string commandString = $"INSERT INTO Questions VALUES (@Id, @Title, @UserId, @Description, 0, 0);";
+                string commandString = $"INSERT INTO Questions VALUES (@Id, @Title, @UserId, @Description, 0);";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 sqlCommand.Parameters.Add(new SqlParameter("@id", questionItem.Id.ToString()));
@@ -339,7 +336,7 @@ namespace QuestionAswer.ADO
                 //var commandString = "SELECT *, (SELECT [Name] FROM Users WHERE Id = @userId) AS UserName, " +
                 //    "(SELECT COUNT(*) FROM Answers WHERE Questions.Id = Answers.QuestionId) AS CountAnswers " +
                 //    "FROM Questions WHERE Questions.UserId = @userId ORDER BY Rating OFFSET 0 ROWS FETCH NEXT 30 ROWS ONLY";
-                var commandString = $"EXEC GetQuestionsFromUser @userId, {count}, {startCount};";
+                var commandString = $"EXEC GetQuestionsFromUser @userId, {count}, {startCount}, 15;";
 
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
@@ -461,6 +458,23 @@ namespace QuestionAswer.ADO
 
                 sqlCommand.Parameters.Add(new SqlParameter("@questionId", questionId.ToString()));
                 
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+        }
+
+        public async Task AddViewQuestion(Guid questionId, int count)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                await sqlConnection.OpenAsync();
+
+                string commandString = $"UPDATE Questions SET [Views] = [Views] + {count} WHERE Questions.Id = '{questionId.ToString()}'";
+                SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+                //sqlCommand.Parameters.Add(new SqlParameter("@id", likeItem.Id.ToString()));
+                //sqlCommand.Parameters.Add(new SqlParameter("@messageId", likeItem.MessageId));
+                //sqlCommand.Parameters.Add(new SqlParameter("@userId", likeItem.UserId));
+
                 await sqlCommand.ExecuteNonQueryAsync();
             }
         }
