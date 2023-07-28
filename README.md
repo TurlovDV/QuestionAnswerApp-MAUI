@@ -2,29 +2,33 @@
 <br>
 <h1 align='Center'>QuestionAnswer</h1>
 
-<small align='Center'>Разарботать клиент-серверное мобильное приложение, где пользователь может как задать вопрос, так и ответить в виде аркадной игры</small>
+ <img height='16px' src='C:\QuestionAnswerProject\QuestionAnswer\ResourceGit.QuestionAnswer.png'>
+
+
+<small align='Center'>Р Р°Р·Р°СЂР±РѕС‚Р°С‚СЊ РєР»РёРµРЅС‚-СЃРµСЂРІРµСЂРЅРѕРµ РјРѕР±РёР»СЊРЅРѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ, РіРґРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РјРѕР¶РµС‚ РєР°Рє Р·Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃ, С‚Р°Рє Рё РѕС‚РІРµС‚РёС‚СЊ РІ РІРёРґРµ Р°СЂРєР°РґРЅРѕР№ РёРіСЂС‹</small>
+
 
 </br>
 
-<strong>Пользователь может:</strong>
+<strong>РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РјРѕР¶РµС‚:</strong>
 
-+ Авторизоваться/зарегистрирооваться в приложении
-+ Задать вопрос
-+ Ответить на любой вопрос
-+ Оставить комменатрий на ответ
-+ Поставить лайк/дизлайк
++ РђРІС‚РѕСЂРёР·РѕРІР°С‚СЊСЃСЏ/Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРѕРІР°С‚СЊСЃСЏ РІ РїСЂРёР»РѕР¶РµРЅРёРё
++ Р—Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃ
++ РћС‚РІРµС‚РёС‚СЊ РЅР° Р»СЋР±РѕР№ РІРѕРїСЂРѕСЃ
++ РћСЃС‚Р°РІРёС‚СЊ РєРѕРјРјРµРЅР°С‚СЂРёР№ РЅР° РѕС‚РІРµС‚
++ РџРѕСЃС‚Р°РІРёС‚СЊ Р»Р°Р№Рє/РґРёР·Р»Р°Р№Рє
 
 </br>
 
-<strong>Предварительный дизайн проекта</strong> [Figma](https://www.figma.com/file/32H5HMQlV0gsIIRjr0wspj/Untitled?type=design&node-id=0%3A1&mode=design&t=g9bvcUyDfNHzowWG-1)
+<strong>РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ РґРёР·Р°Р№РЅ РїСЂРѕРµРєС‚Р°</strong> [Figma](https://www.figma.com/file/32H5HMQlV0gsIIRjr0wspj/Untitled?type=design&node-id=0%3A1&mode=design&t=g9bvcUyDfNHzowWG-1)
 
 ---
 
-<h1>Реализация</h1>
+<h1>Р РµР°Р»РёР·Р°С†РёСЏ</h1>
 
 
 
-Использумый стэк в решении задачи:
+РСЃРїРѕР»СЊР·СѓРјС‹Р№ СЃС‚СЌРє РІ СЂРµС€РµРЅРёРё Р·Р°РґР°С‡Рё:
 
 + ![PyLoaded](https://img.shields.io/badge/.NET-7-purple)
    + <img height='16px' src='https://img.shields.io/badge/C%23-11-red'>
@@ -40,14 +44,14 @@
    + <img height='16px' src='https://img.shields.io/badge/SQL-gree'>
 + ![PyLoaded](https://img.shields.io/badge/MSUnit-blue)
 
-<h3>Оссобенности</h3>
+<h3>РћСЃСЃРѕР±РµРЅРЅРѕСЃС‚Рё</h3>
 
-<small>Применение ахитектурного подхода MVVM</small></br>
-<small>Аутентификация с помощью JWT-токенов (Access and Refresh)</small>
+<small>РџСЂРёРјРµРЅРµРЅРёРµ Р°С…РёС‚РµРєС‚СѓСЂРЅРѕРіРѕ РїРѕРґС…РѕРґР° MVVM</small></br>
+<small>РђСѓС‚РµРЅС‚РёС„РёРєР°С†РёСЏ СЃ РїРѕРјРѕС‰СЊСЋ JWT-С‚РѕРєРµРЅРѕРІ (Access and Refresh)</small>
 
 ---
 
-<h3>Разделение решения на проекты:</h3>
+<h3>Р Р°Р·РґРµР»РµРЅРёРµ СЂРµС€РµРЅРёСЏ РЅР° РїСЂРѕРµРєС‚С‹:</h3>
 
 + Tests
 + QuestionAnswer.Api
@@ -57,26 +61,26 @@
 + QuestionAnswer.ADO
 
 <strong>Tests</strong></br>
-<small>Проект MSUnit с тестами</small>
+<small>РџСЂРѕРµРєС‚ MSUnit СЃ С‚РµСЃС‚Р°РјРё</small>
 
 <strong>QuestionAnswers.Api</strong></br>
-<small>Проект ASP .NET Core REST API</small>
+<small>РџСЂРѕРµРєС‚ ASP .NET Core REST API</small>
 
 <strong>QuestionAnswers.Api.Client</strong></br>
-<small>Проект реализующий интефейс работы клиента с Web Api</small>
+<small>РџСЂРѕРµРєС‚ СЂРµР°Р»РёР·СѓСЋС‰РёР№ РёРЅС‚РµС„РµР№СЃ СЂР°Р±РѕС‚С‹ РєР»РёРµРЅС‚Р° СЃ Web Api</small>
 
 <strong>QuestionAnswers.DTO</strong></br>
-<small>Модели дынных для переадачи между клиентом и сервером</small>
+<small>РњРѕРґРµР»Рё РґС‹РЅРЅС‹С… РґР»СЏ РїРµСЂРµР°РґР°С‡Рё РјРµР¶РґСѓ РєР»РёРµРЅС‚РѕРј Рё СЃРµСЂРІРµСЂРѕРј</small>
 
 <strong>QuestionAnswers.Mobile</strong></br>
-<small>Проект MAUI</small>
+<small>РџСЂРѕРµРєС‚ MAUI</small>
 
 <strong>QuestionAnswers.ADO</strong></br>
-<small>Проект реализующий интефейс работы с базой данных MSSQL</small>
+<small>РџСЂРѕРµРєС‚ СЂРµР°Р»РёР·СѓСЋС‰РёР№ РёРЅС‚РµС„РµР№СЃ СЂР°Р±РѕС‚С‹ СЃ Р±Р°Р·РѕР№ РґР°РЅРЅС‹С… MSSQL</small>
 
 ---
 
-<h3>Итоговое решение</h3>
+<h3>РС‚РѕРіРѕРІРѕРµ СЂРµС€РµРЅРёРµ</h3>
 
 
 
