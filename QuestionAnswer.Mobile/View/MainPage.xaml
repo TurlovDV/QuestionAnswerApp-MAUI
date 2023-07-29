@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="QuestionAnswer.Mobile.View.MainPage"
+             xmlns:viewmodel="clr-namespace:QuestionAnswer.Mobile.ViewModel"             
+             xmlns:model="clr-namespace:QuestionAnswer.Mobile.Model.QuestionItemModel"
+             x:DataType="viewmodel:MainPageViewModel"
+             Title="">
+    
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#5D377A" Offset="0"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Shell.NavBarIsVisible>
+        <x:Boolean>false</x:Boolean>
+    </Shell.NavBarIsVisible>
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#5D377A"></toolkit:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <StackLayout Margin="15, 10, 0, 0" Orientation="Horizontal" Spacing="5" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Start">
+            <Image Source="profile.svg" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"></Image>
+            <Label FontFamily="Roboto-Medium" Text="{Binding Profile.Name}" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"></Label>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoToProfileCommand}"></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout Spacing="15" TranslationY="-40" Grid.Row="1" VerticalOptions="Center">
+            <StackLayout VerticalOptions="Center" Spacing="20">
+                <Label FontFamily="Roboto-Medium" Text="Случайные вопросы" Margin="30, 0, 0, 0" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                
+                <!--Box сообщения-->
+                <CarouselView Loop="True" Position="{Binding PositionQuestion}" PositionChangedCommand="{Binding PositionQuestionChangedCommand}" x:DataType="viewmodel:MainPageViewModel" ItemsSource="{Binding Questions}" HorizontalOptions="FillAndExpand" HeightRequest="230">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame x:DataType="model:QuestionItem" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20, 0, 20, 0" BorderColor="Transparent" Padding="0" CornerRadius="20">
+                                <Grid RowDefinitions="Auto, *, Auto">
+                                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="15">
+                                        <StackLayout Orientation="Horizontal" Spacing="3">
+                                            <Image Source="profile.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                            <Label FontFamily="Roboto-Medium" Text="{Binding UserName}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Spacing="3">
+                                            <Image Source="star_image.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                            <Label FontFamily="Roboto-Medium" Text="{Binding Rating}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Spacing="3">
+                                            <Image Source="view_image.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"></Image>
+                                            <Label FontFamily="Roboto-Medium" Text="{Binding Views}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Margin="20, 20, 20, 0">
+                                        <Label Text="{Binding Description}"></Label>
+                                        <Label FontFamily="Roboto-Medium" Text="Смотреть полностью..." TextColor="Gray"></Label>
+                                    </StackLayout>
+                                    <Frame Grid.Row="2" CornerRadius="0" HeightRequest="50" BackgroundColor="#853A90" BorderColor="Transparent" Padding="0">
+                                        <Label FontFamily="Roboto-Medium" Text="Ответить" HorizontalOptions="Center" TextColor="White" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                                    </Frame>
+                                    <Button BackgroundColor="Transparent" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.GoToQuestionMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" x:DataType="viewmodel:MainPageViewModel"></Button>
+                                </Grid>
+                                <Frame.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#8D02BD" Offset="0"/>
+                                        <GradientStop Color="#4E2752" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <!--<Frame.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.GoToQuestionMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" x:DataType="viewmodel:MainPageViewModel"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>-->
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+            <Grid ColumnDefinitions="*, *" ColumnSpacing="15" VerticalOptions="Start" HorizontalOptions="Center">
+                <Frame CornerRadius="20" Padding="0" Grid.Column="0" HorizontalOptions="Start" WidthRequest="150" HeightRequest="140">
+                    <Grid RowDefinitions="*, *">
+                        <Frame Grid.Row="0" Padding="0" CornerRadius="0" BorderColor="Transparent" BackgroundColor="#73367D">
+                            <Image Source="star_image.svg" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                        </Frame>
+                        <StackLayout Grid.Row="1" Padding="0" Margin="5, 5, 0, 0">
+                            <Label FontFamily="Roboto-Medium" Text="Рейтинг" TextColor="Black" FontSize="16" FontAttributes="Bold"></Label>
+                            <Label FontFamily="Roboto-Medium" Text="{Binding Profile.Rating}" TextColor="#716E26" FontSize="13" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <Button Command="{Binding OpenPopupRatingInfoCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                    </Grid>
+                </Frame>
+                <Frame CornerRadius="20" Grid.Column="1" Padding="0" HorizontalOptions="End" WidthRequest="150" HeightRequest="140">
+                    <Grid RowDefinitions="*, *">
+                        <Frame Grid.Row="0" Padding="0" CornerRadius="0" BorderColor="Transparent" BackgroundColor="#73367D">
+                            <Image Source="question_image.svg" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                        </Frame>
+                        <StackLayout Grid.Row="1" Padding="0" Margin="5, 5, 0, 0">
+                            <Label FontFamily="Roboto-Medium" Text="Мои вопросы" TextColor="Black" FontSize="16" FontAttributes="Bold"></Label>
+                            <Label FontFamily="Roboto-Medium" Text="{Binding Profile.CountMyQuestions}" TextColor="#716E26" FontSize="13" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <Button Command="{Binding OpenPopupMyQuestionCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                    </Grid>
+                    <!--<Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenPopupMyQuestionCommand}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>-->
+                </Frame>
+            </Grid>
+        </StackLayout>
+
+        <Image Source="vector.svg" Aspect="Fill" Grid.Row="3" HorizontalOptions="FillAndExpand"></Image>
+        <StackLayout Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Start" TranslationY="-60" Spacing="10">
+            <Label FontFamily="Roboto-Medium" Text="Задать вопрос" TextColor="White" FontAttributes="Bold" FontSize="18"></Label>
+            <Frame Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#7A3A98" HeightRequest="80" WidthRequest="80" CornerRadius="100">
+                <Image Source="message_image.svg" HorizontalOptions="Center" VerticalOptions="Center" Margin="3"></Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenPopupCreateQuestionCommand}"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

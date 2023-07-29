@@ -1,1 +1,0 @@
-C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer\QuestionAnswer.App.csproj;x64

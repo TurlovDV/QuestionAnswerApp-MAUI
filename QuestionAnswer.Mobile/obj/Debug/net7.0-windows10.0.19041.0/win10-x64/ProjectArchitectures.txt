@@ -1,0 +1,1 @@
+C:\QuestionAnswerProject\QuestionAnswer\QuestionAnswer.Mobile\QuestionAnswer.Mobile.csproj;x64
