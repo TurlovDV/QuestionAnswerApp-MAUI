@@ -9,6 +9,19 @@ namespace QuestionAnswer.DTO.Model.QuestionItemModel
 {
     public class QuestionItemDTO : MessageItemDTO
     {
+        public override bool Equals(object? obj)
+        {
+            QuestionItemDTO? question = obj as QuestionItemDTO;
+            if (question is null)
+                return false;
+
+            return this.Id == question.Id;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public int Views { get; set; }
 
         public string? Title { get; set; }  

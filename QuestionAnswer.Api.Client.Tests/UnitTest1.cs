@@ -4,7 +4,7 @@ using QuestionAnswer.DTO.Services;
 
 namespace QuestionAnswer.Api.Client.Tests
 {
-    public class UnitTest1 
+    public class DataCentreService_ 
     {
         
     }

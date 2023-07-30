@@ -23,7 +23,6 @@ namespace QuestionAnswer.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> AddUser(CreateNewUser user)
         {
-
             try
             {
                 await dataBaseService.AddNewUser(user);

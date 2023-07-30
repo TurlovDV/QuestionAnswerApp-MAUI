@@ -41,7 +41,6 @@ namespace QuestionAnswer.Api
             //builder.WebHost.UseUrls("http://127.0.0.1:8080");
 
             var app = builder.Build();
-
             
             // Configure the HTTP request pipeline.
 
