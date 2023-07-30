@@ -3,7 +3,7 @@
 
 
 <p align="center">
-<img height='150px' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/ResourceGit/QuestionAnswer2.png?raw=true'>
+<img height='150px' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/QuestionAnswer2.png?raw=true'>
 </p>
 
 
