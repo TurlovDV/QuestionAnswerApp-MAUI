@@ -1,7 +1,5 @@
 <br>
 
-
-
 <p align="center">
 <img height='150px' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/QuestionAnswer2.png?raw=true'>
 </p>
@@ -9,18 +7,20 @@
 
 <!--<h1 align='Center'>QuestionAnswer</h1>-->
 
-<small align='Center'>Разарботать клиент-серверное мобильное приложение, где пользователь может как задать вопрос, так и ответить в виде аркадной игры</small>
+<small align='Center'>Разарботать клиент-серверное мобильное приложение, на подобе форума, где пользователь имеет возможность как задать вопрос, так и ответить в виде свайпа случайных вопросов.</small>
 
 
 </br>
 
-<strong>Пользователь может:</strong>
+<strong>Пользователь имеет возможность:</strong>
 
-+ Авторизоваться/зарегистрирооваться в приложении
++ Авторизоваться и зарегистрироваться в приложении
 + Задать вопрос
-+ Ответить на любой вопрос
-+ Оставить комменатрий на ответ
-+ Поставить лайк/дизлайк
++ Оветить на вопрос
++ Оставить комментарий
++ Поставить отметку
++ Посмотреть список заданных вопросов
++ Просмотр профиля
 
 </br>
 
@@ -53,7 +53,7 @@
 <small>Аутентификация с помощью JWT-токенов (Access and Refresh)</small>
 
 
-## Разделение решения на проекты:
+### Разделение решения на проекты:
 
 <!--+ Tests
   + Проект MSUnit с тестами
@@ -91,11 +91,45 @@
 <br>
 
 <p align="center">
-<img width='400px' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/ResourceGit/Dependency.png?raw=true'>
+<img width='400px' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/DependencyProject.png?raw=true'>
 </p>
 
 
-## Итоговое решение
+## Итоговый проект
+
+<strong>Регистрация</strong>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
+
+</br>
+
+<strong>Вход</strong>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
+
+</br>
+
+<strong>Просмотр вопросов</strong>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(3).jpeg?raw=true'>
+
+</br>
+
+<strong>Ответ на вопрос</strong>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998.jpeg?raw=true'>
+
+</br>
+
+<strong>Задать вопрос</strong>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690916028.jpeg?raw=true'>
+
+</br>
+
+<strong>Просомтр задынных вопросов</strong>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(2).jpeg?raw=true'>
 
 
 
