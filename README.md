@@ -97,46 +97,66 @@
 
 ## Итоговый проект
 
-<!--<div style="display:flex; justify-content:space-between;">
--->
-
 <strong>Регистрация</strong>
 
-<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
++ Ввод нового логина, пароля 
+
+</br>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
 
 
 </br>
 
 <strong>Вход</strong>
+</br>
++ Ввод логина, пароля
 
-<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(5).jpeg?raw=true'>
 
 </br>
 
-<!--</div>
--->
+<strong>Главная страница</strong>
++ Задать вопрос
++ Мои вопросы
++ Просмотр профиля
++ Просомтр вопросов, в виде свайпа
 
-<strong>Просмотр вопросов</strong>
-
-<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(3).jpeg?raw=true'>
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(3).jpeg?raw=true'>
 
 
 <strong>Ответ на вопрос</strong>
++ Ответы, коментарии на ответы
++ Возможность поставить отметку на ответ
++ Возможность отставить свой ответ
 
-<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998.jpeg?raw=true'>
+</br>
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998.jpeg?raw=true'>
 
 </br>
 
 <strong>Задать вопрос</strong>
++ Ввод заголовка
++ Ввод описания
 
 <img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690916028.jpeg?raw=true'>
 
 </br>
 
 <strong>Просомтр задынных вопросов</strong>
++ Посмотреть ответы на вопрос
++ Удалить вопрос
 
-<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(2).jpeg?raw=true'>
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(2).jpeg?raw=true'>
 
+</br>
+
+<strong>Просомтр профиля</strong>
++ Кнопка выхода из профиля
++ Статистика профиля
+
+<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(1).jpeg?raw=true'>
 
 
 
