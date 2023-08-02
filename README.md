@@ -97,27 +97,33 @@
 
 ## Итоговый проект
 
+<!--<div style="display:flex; justify-content:space-between;">
+-->
+
 <strong>Регистрация</strong>
 
-<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
+<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
+
 
 </br>
 
 <strong>Вход</strong>
 
-<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
+<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(4).jpeg?raw=true'>
 
 </br>
+
+<!--</div>
+-->
 
 <strong>Просмотр вопросов</strong>
 
-<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(3).jpeg?raw=true'>
+<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(3).jpeg?raw=true'>
 
-</br>
 
 <strong>Ответ на вопрос</strong>
 
-<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998.jpeg?raw=true'>
+<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998.jpeg?raw=true'>
 
 </br>
 
@@ -129,7 +135,7 @@
 
 <strong>Просомтр задынных вопросов</strong>
 
-<img height='400' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(2).jpeg?raw=true'>
+<img height='300' src='https://github.com/TurlovDV/QuestionAnswerApp-MAUI/blob/master/resourceREADME/photo1690915998%20(2).jpeg?raw=true'>
 
 
 
